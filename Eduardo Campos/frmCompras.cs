@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace prueba
+namespace Eduardo_Campos
 {
-    public partial class Form1 : Form
+    public partial class frmCompras : Form
     {
-        public Form1()
+        public frmCompras()
         {
             InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

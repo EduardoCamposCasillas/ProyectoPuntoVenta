@@ -34,7 +34,7 @@ namespace Eduardo_Campos
 
             if (ousuario != null)
             {
-                Menu form = new Menu();
+                Menu form = new Menu(ousuario);
 
                 form.Show();
                 this.Hide();
@@ -54,6 +54,11 @@ namespace Eduardo_Campos
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

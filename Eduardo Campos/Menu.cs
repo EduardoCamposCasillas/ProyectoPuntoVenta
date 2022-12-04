@@ -8,23 +8,75 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using CapaEntidad;
+
+using FontAwesome.Sharp;
+
 namespace Eduardo_Campos
 {
     public partial class Menu : Form
     {
-        public Menu()
+        private static Usuario usuarioActual;
+        private static IconMenuItem MenuActivo = null;
+        private static Form FormularioActivo = null;
+        public Menu(Usuario objusuario)
         {
+            usuarioActual = objusuario;
             InitializeComponent();
         }
 
-        private void iconMenuItem1ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void AbrirFormulario(IconMenuItem menu, Form formulario)
         {
+            if (MenuActivo != null)
+            {
+                MenuActivo.BackColor = Color.White;
+            }
+            menu.BackColor = Color.Silver;
+            MenuActivo = menu;
 
+            if (FormularioActivo != null)
+            {
+                FormularioActivo.Close();
+            }
+
+            FormularioActivo = formulario;
+            formulario.TopLevel = false;
+            formulario.FormBorderStyle = FormBorderStyle.None;
+            formulario.Dock = DockStyle.Fill;
+            formulario.BackColor = Color.SteelBlue;
+
+            contenedor.Controls.Add(formulario);
+            formulario.Show();
         }
 
         private void Menu_Load(object sender, EventArgs e)
         {
+            lblUsuario.Text = usuarioActual.NombreCompleto;
+        }
 
+        private void menuUsuarios_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new frmUsuarios());
+        }
+
+        private void submenuCategoria_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menuMantenedor, new frmCategoria());
+        }
+
+        private void submenuProducto_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menuMantenedor, new frmProducto());
+        }
+
+        private void submenuRegistrar_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menuVentas, new frmVentas());
+        }
+
+        private void submenuVerDetalle_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menuVentas, new frmVerDetalleVenta());
         }
     }
 }
