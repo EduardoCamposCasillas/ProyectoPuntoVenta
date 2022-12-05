@@ -71,7 +71,7 @@
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.menuStrip1.Size = new System.Drawing.Size(1387, 103);
             this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.Text = "Menu";
             // 
             // menuUsuarios
             // 
@@ -103,14 +103,14 @@
             // submenuCategoria
             // 
             this.submenuCategoria.Name = "submenuCategoria";
-            this.submenuCategoria.Size = new System.Drawing.Size(190, 34);
+            this.submenuCategoria.Size = new System.Drawing.Size(270, 34);
             this.submenuCategoria.Text = "Categoria";
             this.submenuCategoria.Click += new System.EventHandler(this.submenuCategoria_Click);
             // 
             // submenuProducto
             // 
             this.submenuProducto.Name = "submenuProducto";
-            this.submenuProducto.Size = new System.Drawing.Size(190, 34);
+            this.submenuProducto.Size = new System.Drawing.Size(270, 34);
             this.submenuProducto.Text = "Producto";
             this.submenuProducto.Click += new System.EventHandler(this.submenuProducto_Click);
             // 
@@ -170,6 +170,7 @@
             this.submenuRegistrarCompra.Name = "submenuRegistrarCompra";
             this.submenuRegistrarCompra.Size = new System.Drawing.Size(270, 34);
             this.submenuRegistrarCompra.Text = "Registrar";
+            this.submenuRegistrarCompra.Click += new System.EventHandler(this.submenuRegistrarCompra_Click);
             // 
             // submenuVerDetalleCompra
             // 
@@ -179,6 +180,7 @@
             this.submenuVerDetalleCompra.Name = "submenuVerDetalleCompra";
             this.submenuVerDetalleCompra.Size = new System.Drawing.Size(270, 34);
             this.submenuVerDetalleCompra.Text = "Ver Detalle";
+            this.submenuVerDetalleCompra.Click += new System.EventHandler(this.submenuVerDetalleCompra_Click);
             // 
             // menuClientes
             // 
@@ -190,6 +192,7 @@
             this.menuClientes.Size = new System.Drawing.Size(89, 99);
             this.menuClientes.Text = "Clientes";
             this.menuClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.menuClientes.Click += new System.EventHandler(this.menuClientes_Click);
             // 
             // menuProveedores
             // 
@@ -201,6 +204,7 @@
             this.menuProveedores.Size = new System.Drawing.Size(127, 99);
             this.menuProveedores.Text = "Proveedores";
             this.menuProveedores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.menuProveedores.Click += new System.EventHandler(this.menuProveedores_Click);
             // 
             // menuReportes
             // 
@@ -212,6 +216,7 @@
             this.menuReportes.Size = new System.Drawing.Size(98, 99);
             this.menuReportes.Text = "Reportes";
             this.menuReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.menuReportes.Click += new System.EventHandler(this.menuReportes_Click);
             // 
             // menuAcerca
             // 

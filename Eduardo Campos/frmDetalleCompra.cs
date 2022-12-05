@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace Eduardo_Campos
 {
-    public partial class frmUsuarios : Form
+    public partial class frmDetalleCompra : Form
     {
-        public frmUsuarios()
+        public frmDetalleCompra()
         {
             InitializeComponent();
         }
-
-        
     }
 }

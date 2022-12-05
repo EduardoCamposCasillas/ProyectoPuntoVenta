@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using CapaEntidad;
-
+using CapaNegocio;
 using FontAwesome.Sharp;
 
 namespace Eduardo_Campos
@@ -19,8 +19,13 @@ namespace Eduardo_Campos
         private static Usuario usuarioActual;
         private static IconMenuItem MenuActivo = null;
         private static Form FormularioActivo = null;
-        public Menu(Usuario objusuario)
+        public Menu(Usuario objusuario = null)
         {
+            if (objusuario == null)
+                usuarioActual = new Usuario() { NombreCompleto = "ADMIN PREDEFINIDO", IdUsuario = 1 };
+            else
+                usuarioActual = objusuario;
+
             usuarioActual = objusuario;
             InitializeComponent();
         }
@@ -51,6 +56,17 @@ namespace Eduardo_Campos
 
         private void Menu_Load(object sender, EventArgs e)
         {
+            List<Permiso> ListaPermisos = new CN_Permiso().Listar(usuarioActual.IdUsuario);
+
+            foreach(IconMenuItem iconmenu in menuStrip1.Items)
+            {
+                bool encontrado = ListaPermisos.Any(m => m.NombreMenu == iconmenu.Name);
+                if (encontrado == false)
+                {
+                    iconmenu.Visible = false;
+                }
+            }
+
             lblUsuario.Text = usuarioActual.NombreCompleto;
         }
 
@@ -77,6 +93,31 @@ namespace Eduardo_Campos
         private void submenuVerDetalle_Click(object sender, EventArgs e)
         {
             AbrirFormulario(menuVentas, new frmVerDetalleVenta());
+        }
+
+        private void submenuRegistrarCompra_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menuCompras, new frmCompras());
+        }
+
+        private void submenuVerDetalleCompra_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menuCompras, new frmDetalleCompra());
+        }
+
+        private void menuClientes_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new frmClientes());
+        }
+
+        private void menuProveedores_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new frmProveedores());
+        }
+
+        private void menuReportes_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new frmReportes());
         }
     }
 }
