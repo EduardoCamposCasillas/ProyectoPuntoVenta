@@ -18,9 +18,13 @@ namespace CapaDatos
             List<Usuario> lista = new List<Usuario>();
             Conexion cone = new Conexion();
             MySqlCommand Query;
+
+            StringBuilder queryString = new StringBuilder();
+            queryString.AppendLine("SELECT u.IdUsuario,u.Documento,u.NombreCompleto,u.Correo,u.Clave,u.Estado,r.IdRol,r.Descripcion FROM USUARIO u");
+            queryString.AppendLine("INNER JOIN ROL r on r.IdRol = u.IdRol");
             try
             {
-                Query = new MySqlCommand("SELECT IdUsuario, Documento, NombreCompleto, Correo, Clave, Estado FROM usuario", cone.Conectar());
+                Query = new MySqlCommand(queryString.ToString(), cone.Conectar());
                 Query.Prepare();
 
 
@@ -35,7 +39,8 @@ namespace CapaDatos
                             NombreCompleto = reader["NombreCompleto"].ToString(),
                             Correo = reader["Correo"].ToString(),
                             Clave = reader["Clave"].ToString(),
-                            Estado = Convert.ToBoolean(reader["Estado"])
+                            Estado = Convert.ToBoolean(reader["Estado"]),
+                            oRol = new Rol() { IdRol = Convert.ToInt32(reader["IdRol"]), Descripcion = reader["Descripcion"].ToString() }
                         });
                     }
                 }

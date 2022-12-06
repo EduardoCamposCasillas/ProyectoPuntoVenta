@@ -7,16 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Control = Eduardo_Campos.control.Control;
-using Eduardo_Campos.entidades;
+using Control = CapaPresentacion.control.Control;
+using CapaPresentacion.entidades;
 //using Conexion = Eduardo_Campos.control.Conexion;
-using Eduardo_Campos.control;
-using Eduardo_Campos.vistas;
+using CapaPresentacion.control;
+using CapaPresentacion.vistas;
 
 using CapaNegocio;
 using CapaEntidad;
 
-namespace Eduardo_Campos
+namespace CapaPresentacion
 {
     public partial class Login : Form
     {

@@ -1,4 +1,4 @@
-﻿namespace Eduardo_Campos
+﻿namespace CapaPresentacion
 {
     partial class frmReportes
     {

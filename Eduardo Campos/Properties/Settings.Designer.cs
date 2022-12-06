@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Eduardo_Campos.Properties
+namespace CapaPresentacion.Properties
 {
 
 

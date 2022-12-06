@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Eduardo_Campos.entidades;
-using Eduardo_Campos.control;
+using CapaPresentacion.entidades;
+using CapaPresentacion.control;
 using MySql.Data.MySqlClient;
-using Eduardo_Campos.recursos;
+using CapaPresentacion.recursos;
 
 using CapaEntidad;
 
-namespace Eduardo_Campos.control
+namespace CapaPresentacion.control
 {
     internal class Control : Conexion
     {

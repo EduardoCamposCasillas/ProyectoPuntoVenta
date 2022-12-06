@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Eduardo_Campos.Utilidades
+namespace CapaPresentacion.Utilidades
 {
     public class OpcionesCombo
     {

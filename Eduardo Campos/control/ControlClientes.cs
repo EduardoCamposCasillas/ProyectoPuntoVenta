@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Eduardo_Campos.control;
+using CapaPresentacion.control;
 
-namespace Eduardo_Campos.control
+namespace CapaPresentacion.control
 {
     internal class ControlClientes : Conexion
     {

@@ -28,7 +28,7 @@ namespace CapaDatos
                 MySqlCommand comando = new MySqlCommand();
                 comando.Connection = con;
                 con.Open();
-                MessageBox.Show(Eduardo_Campos.mensajes.Mensajes.conBD);
+                MessageBox.Show(CapaPresentacion.mensajes.Mensajes.conBD);
             }
             catch (Exception ex)
             {

@@ -1,4 +1,4 @@
-﻿namespace Eduardo_Campos.vistas
+﻿namespace CapaPresentacion.vistas
 {
     partial class FrmMenu
     {

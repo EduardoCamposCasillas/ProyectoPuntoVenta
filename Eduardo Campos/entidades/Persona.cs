@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Eduardo_Campos.entidades
+namespace CapaPresentacion.entidades
 {
     internal class Persona
     {

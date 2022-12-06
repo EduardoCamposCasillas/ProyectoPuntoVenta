@@ -12,7 +12,7 @@ using CapaEntidad;
 using CapaNegocio;
 using FontAwesome.Sharp;
 
-namespace Eduardo_Campos
+namespace CapaPresentacion
 {
     public partial class Menu : Form
     {

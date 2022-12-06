@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Eduardo_Campos.vistas
+namespace CapaPresentacion.vistas
 {
     public partial class FrmClientes : Form
     {

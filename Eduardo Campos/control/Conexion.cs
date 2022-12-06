@@ -7,7 +7,7 @@ using System.Windows.Forms;
 using System.Data;
 using MySql.Data.MySqlClient;
 
-namespace Eduardo_Campos.control
+namespace CapaPresentacion.control
 {
     internal class Conexion
     {

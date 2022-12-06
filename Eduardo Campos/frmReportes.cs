@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Eduardo_Campos
+namespace CapaPresentacion
 {
     public partial class frmReportes : Form
     {

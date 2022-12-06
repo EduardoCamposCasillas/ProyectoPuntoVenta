@@ -1,4 +1,4 @@
-﻿namespace Eduardo_Campos
+﻿namespace CapaPresentacion
 {
     partial class frmUsuarios
     {
@@ -35,9 +35,9 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.lblCorreo = new System.Windows.Forms.Label();
-            this.txtContra = new System.Windows.Forms.TextBox();
+            this.txtClave = new System.Windows.Forms.TextBox();
             this.lblContra = new System.Windows.Forms.Label();
-            this.txtConfirmarContra = new System.Windows.Forms.TextBox();
+            this.txtConfirmarClave = new System.Windows.Forms.TextBox();
             this.lblConfirmarContra = new System.Windows.Forms.Label();
             this.lblRol = new System.Windows.Forms.Label();
             this.cbxRol = new System.Windows.Forms.ComboBox();
@@ -47,23 +47,25 @@
             this.btnIconEditar = new FontAwesome.Sharp.IconButton();
             this.btnIconEliminar = new FontAwesome.Sharp.IconButton();
             this.dtgData = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.btnSeleccionar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSelec = new System.Windows.Forms.DataGridViewButtonColumn();
             this.IdUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EstadoValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.lblBuscar = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.cbxBuscar = new System.Windows.Forms.ComboBox();
             this.btnIconBuscar = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.txtIndex = new System.Windows.Forms.TextBox();
+            this.lblIndex = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -127,13 +129,13 @@
             this.lblCorreo.TabIndex = 6;
             this.lblCorreo.Text = "Correo";
             // 
-            // txtContra
+            // txtClave
             // 
-            this.txtContra.Location = new System.Drawing.Point(16, 268);
-            this.txtContra.Name = "txtContra";
-            this.txtContra.PasswordChar = '*';
-            this.txtContra.Size = new System.Drawing.Size(211, 26);
-            this.txtContra.TabIndex = 9;
+            this.txtClave.Location = new System.Drawing.Point(16, 268);
+            this.txtClave.Name = "txtClave";
+            this.txtClave.PasswordChar = '*';
+            this.txtClave.Size = new System.Drawing.Size(211, 26);
+            this.txtClave.TabIndex = 9;
             // 
             // lblContra
             // 
@@ -145,13 +147,13 @@
             this.lblContra.TabIndex = 8;
             this.lblContra.Text = "Contraseña";
             // 
-            // txtConfirmarContra
+            // txtConfirmarClave
             // 
-            this.txtConfirmarContra.Location = new System.Drawing.Point(16, 343);
-            this.txtConfirmarContra.Name = "txtConfirmarContra";
-            this.txtConfirmarContra.PasswordChar = '*';
-            this.txtConfirmarContra.Size = new System.Drawing.Size(211, 26);
-            this.txtConfirmarContra.TabIndex = 11;
+            this.txtConfirmarClave.Location = new System.Drawing.Point(16, 343);
+            this.txtConfirmarClave.Name = "txtConfirmarClave";
+            this.txtConfirmarClave.PasswordChar = '*';
+            this.txtConfirmarClave.Size = new System.Drawing.Size(211, 26);
+            this.txtConfirmarClave.TabIndex = 11;
             // 
             // lblConfirmarContra
             // 
@@ -245,12 +247,12 @@
             // 
             this.dtgData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.btnSeleccionar,
+            this.btnSelec,
             this.IdUsuario,
             this.NroDocumento,
+            this.NombreCompleto,
             this.Correo,
             this.Clave,
-            this.NombreCompleto,
             this.IdRol,
             this.Rol,
             this.EstadoValor,
@@ -261,32 +263,15 @@
             this.dtgData.RowTemplate.Height = 28;
             this.dtgData.Size = new System.Drawing.Size(1085, 570);
             this.dtgData.TabIndex = 19;
+            this.dtgData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgData_CellContentClick);
+            this.dtgData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dtgData_CellPainting);
             // 
-            // label1
+            // btnSelec
             // 
-            this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Location = new System.Drawing.Point(289, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1101, 118);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Lista de Usuarios";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtId
-            // 
-            this.txtId.Location = new System.Drawing.Point(251, 32);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(32, 26);
-            this.txtId.TabIndex = 21;
-            this.txtId.Text = "0";
-            // 
-            // btnSeleccionar
-            // 
-            this.btnSeleccionar.HeaderText = "";
-            this.btnSeleccionar.MinimumWidth = 8;
-            this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.Width = 50;
+            this.btnSelec.HeaderText = "";
+            this.btnSelec.MinimumWidth = 8;
+            this.btnSelec.Name = "btnSelec";
+            this.btnSelec.Width = 30;
             // 
             // IdUsuario
             // 
@@ -303,6 +288,13 @@
             this.NroDocumento.Name = "NroDocumento";
             this.NroDocumento.Width = 150;
             // 
+            // NombreCompleto
+            // 
+            this.NombreCompleto.HeaderText = "Nombre Completo";
+            this.NombreCompleto.MinimumWidth = 8;
+            this.NombreCompleto.Name = "NombreCompleto";
+            this.NombreCompleto.Width = 150;
+            // 
             // Correo
             // 
             this.Correo.HeaderText = "Correo";
@@ -317,13 +309,6 @@
             this.Clave.Name = "Clave";
             this.Clave.Visible = false;
             this.Clave.Width = 150;
-            // 
-            // NombreCompleto
-            // 
-            this.NombreCompleto.HeaderText = "Nombre Completo";
-            this.NombreCompleto.MinimumWidth = 8;
-            this.NombreCompleto.Name = "NombreCompleto";
-            this.NombreCompleto.Width = 150;
             // 
             // IdRol
             // 
@@ -354,6 +339,25 @@
             this.Estado.MinimumWidth = 8;
             this.Estado.Name = "Estado";
             this.Estado.Width = 150;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Location = new System.Drawing.Point(289, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1101, 118);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Lista de Usuarios";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(251, 32);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(32, 26);
+            this.txtId.TabIndex = 21;
+            this.txtId.Text = "0";
             // 
             // lblBuscar
             // 
@@ -407,12 +411,32 @@
             this.iconButton1.Text = "Editar";
             this.iconButton1.UseVisualStyleBackColor = true;
             // 
+            // txtIndex
+            // 
+            this.txtIndex.Location = new System.Drawing.Point(251, 0);
+            this.txtIndex.Name = "txtIndex";
+            this.txtIndex.Size = new System.Drawing.Size(32, 26);
+            this.txtIndex.TabIndex = 27;
+            this.txtIndex.Text = "0";
+            // 
+            // lblIndex
+            // 
+            this.lblIndex.AutoSize = true;
+            this.lblIndex.BackColor = System.Drawing.Color.White;
+            this.lblIndex.Location = new System.Drawing.Point(193, 0);
+            this.lblIndex.Name = "lblIndex";
+            this.lblIndex.Size = new System.Drawing.Size(52, 20);
+            this.lblIndex.TabIndex = 28;
+            this.lblIndex.Text = "Indice";
+            // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1390, 716);
+            this.Controls.Add(this.lblIndex);
+            this.Controls.Add(this.txtIndex);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.btnIconBuscar);
             this.Controls.Add(this.cbxBuscar);
@@ -428,9 +452,9 @@
             this.Controls.Add(this.lblEstado);
             this.Controls.Add(this.cbxRol);
             this.Controls.Add(this.lblRol);
-            this.Controls.Add(this.txtConfirmarContra);
+            this.Controls.Add(this.txtConfirmarClave);
             this.Controls.Add(this.lblConfirmarContra);
-            this.Controls.Add(this.txtContra);
+            this.Controls.Add(this.txtClave);
             this.Controls.Add(this.lblContra);
             this.Controls.Add(this.txtCorreo);
             this.Controls.Add(this.lblCorreo);
@@ -457,9 +481,9 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label lblCorreo;
-        private System.Windows.Forms.TextBox txtContra;
+        private System.Windows.Forms.TextBox txtClave;
         private System.Windows.Forms.Label lblContra;
-        private System.Windows.Forms.TextBox txtConfirmarContra;
+        private System.Windows.Forms.TextBox txtConfirmarClave;
         private System.Windows.Forms.Label lblConfirmarContra;
         private System.Windows.Forms.Label lblRol;
         private System.Windows.Forms.ComboBox cbxRol;
@@ -471,20 +495,22 @@
         private System.Windows.Forms.DataGridView dtgData;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn btnSeleccionar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdUsuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NroDocumento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Clave;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCompleto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdRol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoValor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.Label lblBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.ComboBox cbxBuscar;
         private FontAwesome.Sharp.IconButton btnIconBuscar;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private System.Windows.Forms.DataGridViewButtonColumn btnSelec;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NroDocumento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCompleto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Clave;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdRol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoValor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.TextBox txtIndex;
+        private System.Windows.Forms.Label lblIndex;
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace Eduardo_Campos
+﻿namespace CapaPresentacion
 {
     partial class frmCategoria
     {
@@ -48,6 +48,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmCategoria";
             this.Text = "frmCategoria";
+            this.Load += new System.EventHandler(this.frmCategoria_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
