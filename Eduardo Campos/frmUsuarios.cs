@@ -71,18 +71,16 @@ namespace CapaPresentacion
         {
             
             MySqlCommand Query;
-            string insert = "INSERT INTO `usuario` (`IdUsuario`, `Documento`, `NombreCompleto`, `Correo`, `Estado`, `Clave`," +
-                " `FechaRegistro`, `IdRol`) VALUES (NULL, '@Documento', '@NombreCompleto', '@Correo', '@Estado', '@Clave', current_timestamp(), '@IdRol')";
+            string insert = "INSERT INTO usuario (Documento, NombreCompleto, Correo, Estado, Clave, IdRol) VALUES (@Documento, @NombreCompleto, @Correo, @Estado, @Clave, @IdRol)";
             try
             {
                 Query = new MySqlCommand(insert, cone.Conectar());
-                Query.Prepare();
-                Query.Parameters.AddWithValue("@Documento",txtDocumento.Text);
+                Query.Parameters.AddWithValue("@Documento", txtDocumento.Text.ToString());
                 Query.Parameters.AddWithValue("@NombreCompleto", txtNombreCompleto.Text);
                 Query.Parameters.AddWithValue("@Correo", txtCorreo.Text);
-                Query.Parameters.AddWithValue("@Estado", cbxEstado.SelectedIndex);
+                Query.Parameters.AddWithValue("@Estado", Convert.ToInt32(cbxEstado.SelectedIndex));
                 Query.Parameters.AddWithValue("@Clave", txtClave.Text);
-                Query.Parameters.AddWithValue("@IdRol", cbxRol.SelectedIndex);
+                Query.Parameters.AddWithValue("@IdRol", Convert.ToInt32(cbxRol.SelectedIndex));
 
                 cone.Conectar();
                 int result = Query.ExecuteNonQuery();
